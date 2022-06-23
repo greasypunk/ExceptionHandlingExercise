@@ -29,7 +29,15 @@ namespace ExceptionHandlingExercise
                 // in the scope of your catch you can use the following, 
                     //character will be the name of each item in your collection 
 
-            char[] arr = new char[9] { '0', '1', '2', '3', '4', '5', 'a', 'b', 'c' };
+            //char[] arr = new char[9] { '0', '1', '2', '3', '4', '5', 'a', 'b', 'c' };
+            
+            var rand = new Random();
+            char[] arr = new char[9];
+            string alpha = "abcdefghijklmnopqrstuvwxyz";
+            for (int i = 0; i < 6; i++)
+                arr[i] = char.Parse(rand.Next(9).ToString());
+            for (int i = 6; i < 9; i++)
+                arr[i] = alpha[rand.Next(alpha.Length)];
             List<int> numbers = new List<int>();
             string str;
             foreach (var character in arr) {
